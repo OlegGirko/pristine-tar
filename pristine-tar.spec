@@ -1,15 +1,14 @@
 Name: pristine-tar
 Version: 1.25
-Release: 2%{?dist}
+Release: 3
 Summary: regenerate pristine tarballs
 
 Group: Development/Tools/Other
 License: GPLv2
 Url: http://kitenet.net/~joey/code/pristine-tar/
-Source0: http://ftp.debian.org/debian/pool/main/p/pristine-tar/%{name}_%{version}.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+Source0: %{name}_%{version}.tar.gz
 BuildRequires: zlib-devel, perl, perl-ExtUtils-MakeMaker
-Requires: perl, git, xdelta
+Requires: perl, git, xdelta < 2.0.0
 Requires: perl-Pristine-Tar = %{version}
 
 BuildRequires: fdupes
@@ -65,4 +64,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %{_libdir}/perl5/vendor_perl/*/Pristine
 %{_libdir}/perl5/*/*/perllocal.pod
-

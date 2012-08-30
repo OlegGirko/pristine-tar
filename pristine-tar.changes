@@ -1,2 +1,5 @@
+* Thu Aug 30 2012 David Greaves <david@dgreaves.com> - 1.25-3
+ - Requires xdelta version 1, not 3
+
 * Wed Aug 08 2012 David Greaves <david@dgreaves.com> - 1.25-1
  - Initial packaging of 1.25
