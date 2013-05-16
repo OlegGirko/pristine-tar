@@ -1,3 +1,7 @@
+* Thu May 2013 David Greaves <david@dgreaves.com> - 1.26-1
+- Upstream release version 1.26
+- uses Use xz --robot to extract information from xz files
+
 * Thu Aug 30 2012 David Greaves <david@dgreaves.com> - 1.25-3
  - Requires xdelta version 1, not 3
 

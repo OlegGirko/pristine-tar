@@ -1,12 +1,12 @@
 Name: pristine-tar
-Version: 1.25
-Release: 3
+Version: 1.26
+Release: 1
 Summary: regenerate pristine tarballs
 
 Group: Development/Tools/Other
 License: GPLv2
 Url: http://kitenet.net/~joey/code/pristine-tar/
-Source0: %{name}_%{version}.tar.gz
+Source0: %{name}.tar.gz
 BuildRequires: zlib-devel, perl, perl-ExtUtils-MakeMaker
 Requires: perl, git, xdelta < 2.0.0
 Requires: perl-Pristine-Tar = %{version}
@@ -34,7 +34,6 @@ Summary: Perl modules for pristine-tar
 Perl modules for pristine-tar split out to separate package
 
 %prep
-# Adjusting %%setup since git-pkg unpacks to src/
 %setup -q -n src
 
 %build
@@ -46,7 +45,7 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 chmod -x $RPM_BUILD_ROOT/usr/lib/zgz/suse-bzip2/libbz2.a
-rm -rf $RPM_BUILD_ROOT/usr/lib/perl5/vendor_perl/*/*/auto/Pristine
+rm -rf $RPM_BUILD_ROOT/usr/lib/perl5/vendor_perl/auto/Pristine
 
 %fdupes $RPM_BUILD_ROOT
 
@@ -62,5 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n perl-Pristine-Tar
 %defattr(-,root,root,-)
-%{_libdir}/perl5/vendor_perl/*/Pristine
-%{_libdir}/perl5/*/*/perllocal.pod
+%{_libdir}/perl5/perllocal.pod
+%{_datadir}/perl5/vendor_perl/Pristine/
