@@ -27,6 +27,13 @@ revision control.
 
 pristine-tar is available in git at git://git.kitenet.net/pristine-tar/
 
+%package devel
+Summary: Development libraries for pristine-tar
+Requires: pristine-tar
+
+%description devel
+Development libraries for pristine-tar split out to separate package
+
 %package -n perl-Pristine-Tar
 Summary: Perl modules for pristine-tar
 
@@ -60,6 +67,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_libdir}/zgz
+%exclude %{_libdir}/zgz/suse-bzip2/*.a
+%exclude %{_libdir}/zgz/suse-bzip2/*.so
+
+%files devel
+%defattr(-,root,root,-)
+%{_libdir}/zgz/suse-bzip2/*.a
+%{_libdir}/zgz/suse-bzip2/*.so
 
 %files -n perl-Pristine-Tar
 %defattr(-,root,root,-)
