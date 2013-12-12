@@ -1,7 +1,7 @@
 Name: pristine-tar
 Version: 1.26
 Release: 1
-Summary: regenerate pristine tarballs
+Summary: Regenerate pristine tarballs
 
 Group: Development/Tools/Other
 License: GPLv2

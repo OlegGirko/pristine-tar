@@ -3,6 +3,7 @@
 - Use proper libdir for installing zgz libraries
 - Don't package perllocal.pod file
 - Don't package .packlist file in %{perl_vendorarch}/auto directory
+- Use proper word capitalisation in Summary
 
 * Thu May 2013 David Greaves <david@dgreaves.com> - 1.26-1
 - Upstream release version 1.26
