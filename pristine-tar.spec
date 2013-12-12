@@ -7,7 +7,7 @@ Group: Development/Tools/Other
 License: GPLv2
 Url: http://kitenet.net/~joey/code/pristine-tar/
 Source0: %{name}.tar.gz
-BuildRequires: zlib-devel, perl, perl-ExtUtils-MakeMaker
+BuildRequires: zlib-devel, perl, perl(ExtUtils::MakeMaker)
 Requires: perl, git, xdelta < 2.0.0
 Requires: perl-Pristine-Tar = %{version}
 
