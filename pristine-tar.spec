@@ -38,14 +38,14 @@ Perl modules for pristine-tar split out to separate package
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix}
-make %{?_smp_mflags}
+make %{?_smp_mflags} ZGZ_LIB=%{_libdir}/zgz
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
-chmod -x $RPM_BUILD_ROOT/usr/lib/zgz/suse-bzip2/libbz2.a
-rm -rf $RPM_BUILD_ROOT/usr/lib/perl5/vendor_perl/auto/Pristine
+make install DESTDIR=$RPM_BUILD_ROOT ZGZ_LIB=%{_libdir}/zgz
+chmod -x $RPM_BUILD_ROOT%{_libdir}/zgz/suse-bzip2/libbz2.a
+rm -rf $RPM_BUILD_ROOT%{_libdir}/perl5/vendor_perl/*/*/auto/Pristine
 
 %fdupes $RPM_BUILD_ROOT
 
@@ -61,5 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n perl-Pristine-Tar
 %defattr(-,root,root,-)
-%{_libdir}/perl5/perllocal.pod
-%{_datadir}/perl5/vendor_perl/Pristine/
+%dir %{perl_vendorlib}/Pristine
+%dir %{perl_vendorlib}/Pristine/Tar
+%{perl_vendorlib}/*
+%{perl_archlib}/*

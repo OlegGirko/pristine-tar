@@ -1,5 +1,6 @@
 * Thu Dec 12 2013 Oleg Girko <oleg.girko@jolla.com> - 1.26-2
 - Require perl(ExtUtils::MakeMaker), not perl-ExtUtils-MakeMaker for build
+- Use proper libdir for installing zgz libraries
 
 * Thu May 2013 David Greaves <david@dgreaves.com> - 1.26-1
 - Upstream release version 1.26
