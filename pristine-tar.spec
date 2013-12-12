@@ -46,6 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT ZGZ_LIB=%{_libdir}/zgz
 chmod -x $RPM_BUILD_ROOT%{_libdir}/zgz/suse-bzip2/libbz2.a
 rm -rf $RPM_BUILD_ROOT%{_libdir}/perl5/vendor_perl/*/*/auto/Pristine
+rm -rf $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
 
 %fdupes $RPM_BUILD_ROOT
 
@@ -64,4 +65,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorlib}/Pristine
 %dir %{perl_vendorlib}/Pristine/Tar
 %{perl_vendorlib}/*
-%{perl_archlib}/*
